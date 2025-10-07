@@ -5,12 +5,12 @@ import os
 api_key = st.secrets.get("GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
 
 if not api_key:
-    st.error("❌ API Key tidak ditemukan.\nTambahkan di Streamlit Secrets atau set environment variable GEMINI_API_KEY.")
+    st.error("❌ API Key tidak ditemukan.")
     st.stop()
 
 genai.configure(api_key=api_key)
 
-model = genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 st.set_page_config(page_title="Asisten Anak Kos AI", page_icon="🧺", layout="centered")
 st.title("🧺 Asisten Anak Kos AI")
@@ -60,4 +60,5 @@ if st.sidebar.button("🧽 Bersihkan Riwayat Chat"):
     st.experimental_rerun()
 
 st.sidebar.info("💡 KosBot siap bantu kamu dengan tips anak kos — dari mencuci sampai masak mie instan!")
+
 

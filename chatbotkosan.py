@@ -10,7 +10,7 @@ if not api_key:
 
 genai.configure(api_key=api_key)
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-pro")
 
 st.set_page_config(page_title="Asisten Anak Kos AI", page_icon="🧺", layout="centered")
 st.title("🧺 Asisten Anak Kos AI")
@@ -60,3 +60,4 @@ if st.sidebar.button("🧽 Bersihkan Riwayat Chat"):
     st.experimental_rerun()
 
 st.sidebar.info("💡 KosBot siap bantu kamu dengan tips anak kos — dari mencuci sampai masak mie instan!")
+
